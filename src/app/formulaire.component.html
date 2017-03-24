@@ -1,0 +1,87 @@
+<form class="form-horizontal form-label-left" novalidate action="loginFormateur.html" method="post">
+
+
+  <span class="section">Informations personnelles</span>
+
+  <div class="item form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nom">Nom <span class="required">*</span>
+    </label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <input id="nom" class="form-control col-md-7 col-xs-12" data-validate-length-range="6,20"  name="nom" placeholder="Nom de la famille" required="required" type="text" #nom>
+    </div>
+  </div>
+  <div class="item form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="prenom">Prenom <span class="required">*</span>
+    </label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <input id="prenom" class="form-control col-md-7 col-xs-12" data-validate-length-range="6,20"  name="prenom" placeholder="" required="required" type="text" #prenom>
+    </div>
+  </div>
+  <div class="item form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="dateNaissance">Date de naissance</label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <input type="text" id="dateNaissance" name="dateNaissance" class="form-control col-md-7 col-xs-12" data-inputmask="'mask': '99/99/9999'" #dateNaissance>
+      <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+    </div>
+  </div>
+
+  <div class="item form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Email <span class="required">*</span>
+    </label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <input type="email" id="email" name="email" required="required" class="form-control col-md-7 col-xs-12" #email>
+    </div>
+  </div>
+  <div class="item form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Confirm Email <span class="required">*</span>
+    </label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <input type="email" id="email2" name="confirm_email" data-validate-linked="email" required="required" class="form-control col-md-7 col-xs-12">
+    </div>
+  </div>
+  <div class="item form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="specialite">Specialite <span class="required">*</span>
+    </label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <input id="specialite" type="text" name="specialite" data-validate-length-range="5,20" class="optional form-control col-md-7 col-xs-12" #specialite>
+    </div>
+  </div>
+  <div class="item form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="cin">Numéro de la carte d'identité<span class="required">*</span>
+    </label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <input id="cin" class="form-control col-md-7 col-xs-12" data-validate-length-range="8" name="cin"  required="required" type="text" #cin>
+    </div>
+  </div>
+  <div class="item form-group">
+    <label for="motDepasse" class="control-label col-md-3">Mot de passe</label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <input id="motDepasse" type="password" name="motDepasse" data-validate-length="6,20" class="form-control col-md-7 col-xs-12" required="required" #motDepasse>
+    </div>
+  </div>
+  <div class="item form-group">
+    <label for="password2" class="control-label col-md-3 col-sm-3 col-xs-12">Repeter le mot de passe</label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <input id="password2" type="password" name="password2" data-validate-linked="motDePasse" class="form-control col-md-7 col-xs-12" required="required">
+    </div>
+  </div>
+  <div class="item form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="telephone">Telephone <span class="required">*</span>
+    </label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <input type="tel" id="telephone" name="telephone" required="required" data-validate-length-range="8,20" class="form-control col-md-7 col-xs-12" data-inputmask="'mask': '99-999999'" #telephone>
+    </div>
+  </div>
+
+
+  <div class="ln_solid"></div>
+  <div class="form-group">
+    <div class="col-md-6 col-md-offset-3">
+      <button type="submit" class="btn btn-primary">Cancel</button>
+      <button   class="btn btn-success" (click)="onSubmit(nom.value,prenom.value,dateNaissance.value,email.value,telephone.value,specialite.value,motDepasse.value,cin.value)">onSubmit</button>
+    </div>
+  </div>
+
+</form>
+
+

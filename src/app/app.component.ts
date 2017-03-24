@@ -1,10 +1,18 @@
 import { Component } from '@angular/core';
+import {HttpService} from "./http.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  providers: [ HttpService ]
 })
 export class AppComponent {
-  title = 'app works!';
+  constructor(private httpservice: HttpService) { }
+
+
+
+  onSubmit2(nom: String, prenom: String, dateNaissance: String, email: String, telephone: String, specialite: String, motDepasse: String, cin: String)
+  {
+    console.log(nom);
+  }
 }
