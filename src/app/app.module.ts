@@ -6,12 +6,17 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header.component';
 import { FormulaireComponent } from './formulaire.component';
+import { AuthComponent } from './auth/auth.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FormulaireComponent
+    FormulaireComponent,
+    AuthComponent,
+
+
   ],
   imports: [
     BrowserModule,

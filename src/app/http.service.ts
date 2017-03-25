@@ -40,5 +40,20 @@ var url='http://localhost:8080/createFormateur';
       .map((data: Response) => data.json())
       .catch((error:any) => Observable.throw(error.json().error || 'Server error'));;
   }
+  login(user : any){
+    const headers= new Headers();
+    headers.append('Content-Type','application/x-www-form-urlencoded');
+    headers.append('Access-Control-Allow-Methods', 'POST');
+    headers.append('Access-Control-Allow-Origin', '*');
+    var url='http://localhost:8080/AuthentificationFormateur';
+    let urlSearchParams = new URLSearchParams();
+    urlSearchParams.append('email', user.email);
+    urlSearchParams.append('motDePasse', user.motDePasse);
+    let body = urlSearchParams.toString();
+    console.log(body);
+    return this.http.post(url,body, {headers: headers})
+      .map((data: Response) => data.json())
+      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));;
+  }
 
 }
